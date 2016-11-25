@@ -5,10 +5,8 @@
 
 class TrafficLight
 {
-	std::clock_t lightActivationTime;
 	static const int lightWidth = 21;
 	static const int lightHeight = 21;
-	int currentTime;
 
 	const char light[lightHeight][lightWidth] = {
 		"********************",
@@ -103,10 +101,12 @@ class TrafficLight
 		"********************"
 	};
 public:
+	void drawEmpty() const;
 	void drawRed() const;
 	void blinkYellow();
+	void drawYellow() const;
 	void drawGreen() const;
-
+	
 
 };
 

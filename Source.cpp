@@ -8,11 +8,8 @@ int main()
 	
 	TrafficLight light;
 	bool isGoingDown = true;
-	std::clock_t start;
-	int current;
 	while (true)
 	{
-
 		if (isGoingDown)
 		{
 			light.drawRed();
@@ -26,8 +23,5 @@ int main()
 			isGoingDown = true;
 		}
 	}
-
-
-
-	return(0);
+	return 0;
 }

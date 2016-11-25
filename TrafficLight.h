@@ -9,7 +9,6 @@ class TrafficLight
 	static const int lightWidth = 21;
 	static const int lightHeight = 21;
 	int currentTime;
-	//bool isGoingDown=false;
 
 	const char light[lightHeight][lightWidth] = {
 		"********************",
@@ -104,10 +103,9 @@ class TrafficLight
 		"********************"
 	};
 public:
-	const void drawRed();
-	const void blinkYellow();
-	const void drawGreen();
-	//const bool isGoingDown();
+	void drawRed() const;
+	void blinkYellow();
+	void drawGreen() const;
 
 
 };

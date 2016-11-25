@@ -1,9 +1,6 @@
 #include "TrafficLight.h"
 
-
-
-
-const void TrafficLight::drawRed()
+void TrafficLight::drawRed() const
 {
 	for (int i = 0; i < lightHeight; i++)
 	{
@@ -14,10 +11,10 @@ const void TrafficLight::drawRed()
 	_sleep(1000);
 }
 
-const void TrafficLight::blinkYellow()
+void TrafficLight::blinkYellow()
 {
 	lightActivationTime = std::clock();
-	for (int i = 0; i<4; i++)
+	for (int yellowBlink = 0; yellowBlink<4; yellowBlink++)
 	{
 		_sleep(1000);
 		system("cls");
@@ -45,7 +42,7 @@ const void TrafficLight::blinkYellow()
 	system("cls");
 }
 
-const void TrafficLight::drawGreen()
+void TrafficLight::drawGreen() const
 {
 	for (int i = 0; i < lightHeight; i++)
 	{
@@ -53,8 +50,6 @@ const void TrafficLight::drawGreen()
 			std::cout << lightGreen[i][j];
 		std::cout << "\n";
 	}
-
 	_sleep(2000);
-	//isGoingDown = false;
 }
 

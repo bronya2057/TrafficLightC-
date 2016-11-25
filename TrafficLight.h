@@ -5,6 +5,10 @@
 
 class TrafficLight
 {
+	enum state { RED,YELLOW,GREEN };
+	int timeElapsedPause;			//TO SOLVE PROBLEM WITH TIME after PAUSE
+	bool isGoingDown;
+
 	static const int lightWidth = 21;
 	static const int lightHeight = 21;
 
@@ -100,6 +104,9 @@ class TrafficLight
 		"*                  *",
 		"********************"
 	};
+
+
+	
 public:
 	void drawEmpty() const;
 	void drawRed() const;

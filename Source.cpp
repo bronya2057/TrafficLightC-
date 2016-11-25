@@ -1,23 +1,25 @@
-#include "Source.h"
+#include "Source.h" //TODO THREAD stop start from other thread and fix time left to execute
 
 int main()
 {
-	
-	std::thread first(turnOnLight);     // spawn new thread that calls 
-	std::thread second(waitUserResponce);  // spawn new thread that calls 
+
+	std::thread lightControlThread(turnOnLight);     // spawn new thread that calls 
+	std::thread userInputThread(waitUserResponce);  // spawn new thread that calls 
 
 	// synchronize threads:
 
-	first.join();                // pauses until first finishes
-	second.join();               // pauses until second finishes
+	lightControlThread.join();                // pauses until first finishes
+	userInputThread.join();               // pauses until second finishes
 	
 	return 0;
 }
 
 void turnOnLight()
 {
+
 	TrafficLight light;//TODO RUNcycle and STOP cycle
 	bool isGoingDown = true;
+	
 	while (true)
 	{
 		if (isGoingDown)
@@ -41,8 +43,10 @@ void waitUserResponce()
 {
 	while(true)
 	{
-		_sleep(1000);
-		std::cout << "FUCK";
+		/*_sleep(1000);
+		std::cout << "FUCK";*/
+		if (std::cin.get() == 'E')
+			exit(0);
 		
 	}
 

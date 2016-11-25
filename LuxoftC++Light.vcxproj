@@ -23,6 +23,7 @@
     <ClCompile Include="TrafficLight.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source.h" />
     <ClInclude Include="TrafficLight.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

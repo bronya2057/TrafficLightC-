@@ -1,10 +1,5 @@
 #include "TrafficLight.h"
 
-TrafficLight::TrafficLight()
-{
-	
-}
-
 void TrafficLight::drawEmpty() const
 {
 	for (int i = 0; i < lightHeight; i++)
@@ -35,6 +30,7 @@ void TrafficLight::blinkYellow() const
 	for (int yellowBlink = 0; yellowBlink<4; yellowBlink++)
 	{
 		_sleep(1000);
+		checkState();
 		system("cls");
 		currentTime = std::clock() - lightActivationTime;
 
@@ -42,7 +38,9 @@ void TrafficLight::blinkYellow() const
 
 		if (isEvenTime == 0)
 		{
+			
 			drawEmpty();
+
 		}
 		else
 		{
@@ -98,10 +96,6 @@ void TrafficLight::turnOnLight()
 			blinkYellow();
 			isGoingDown = true;
 		}
-
-
-
-
 	}
 }
 

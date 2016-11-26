@@ -2,6 +2,9 @@
 
 int main()
 {
+	
+	
+	system("stty raw");
 	std::cout << "WELCOME TO TRAFFIC LIGHT";
 	_sleep(1000);
 	std::thread lightControlThread(turnOnLight);     // spawn new thread that calls 

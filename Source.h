@@ -6,6 +6,7 @@ void waitUserResponce();
 
 
 #include <string>
+#include<cstdio>
 
 #include "TrafficLight.h"
 #include "Source.h"

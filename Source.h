@@ -3,6 +3,7 @@
 
 void turnOnLight();
 void waitUserResponce();
+void checkState();
 
 
 #include <string>

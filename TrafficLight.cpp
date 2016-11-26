@@ -69,9 +69,6 @@ void TrafficLight::drawGreen() const
 	}
 }
 
-void TrafficLight::pauseSimulation()
-{
 
-}
 
 

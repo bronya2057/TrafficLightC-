@@ -12,6 +12,8 @@ void TrafficLight::drawEmpty() const
 
 void TrafficLight::drawRed() const
 {
+	_sleep(1000);
+	system("cls");
 	for (int i = 0; i < lightHeight; i++)
 	{
 		for (int j = 0; j < lightWidth; j++)
@@ -42,7 +44,7 @@ void TrafficLight::blinkYellow()
 			drawYellow();
 		}
 	}
-	system("cls");
+	
 }
 
 void TrafficLight::drawYellow() const
@@ -57,6 +59,8 @@ void TrafficLight::drawYellow() const
 
 void TrafficLight::drawGreen() const
 {
+	_sleep(1000);
+	system("cls");
 	for (int i = 0; i < lightHeight; i++)
 	{
 		for (int j = 0; j < lightWidth; j++)

@@ -2,7 +2,8 @@
 
 int main()
 {
-
+	std::cout << "WELCOME TO TRAFFIC LIGHT";
+	_sleep(1000);
 	std::thread lightControlThread(turnOnLight);     // spawn new thread that calls 
 	std::thread userInputThread(waitUserResponce);  // spawn new thread that calls 
 
@@ -41,11 +42,12 @@ void turnOnLight()
 }
 void waitUserResponce()
 {
+	
 	while(true)
 	{
 		/*_sleep(1000);
 		std::cout << "FUCK";*/
-		if (std::cin.get() == 'E')
+		if (std::cin.get() == '1')
 			exit(0);
 		
 	}

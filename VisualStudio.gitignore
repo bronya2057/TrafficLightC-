@@ -1,5 +1,7 @@
 *.db
 *.opendb
+*.VC.opendb
+*.VC.db 
 
 # Build results
 [Dd]ebug/

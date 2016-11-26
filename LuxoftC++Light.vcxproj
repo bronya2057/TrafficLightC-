@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TrafficLight.cpp" />
+    <ClCompile Include="UserInputCheck.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source.h" />
     <ClInclude Include="TrafficLight.h" />
+    <ClInclude Include="UserInputCheck.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{767DAB0D-A988-47A2-B901-7B53CB2A95EB}</ProjectGuid>

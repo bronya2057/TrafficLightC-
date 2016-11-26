@@ -1,15 +1,8 @@
-#ifndef SOURCE_CLASS
-#define SOURCE_CLASS
-
-#include <string>
-#include<cstdio>
-
-#include "TrafficLight.h"
-#include "Source.h"
+#ifndef SOURCE_CLASS_H
+#define SOURCE_CLASS_H
 
 #include <thread>	
-#include <future>
 
-
+#include "TrafficLight.h"
 
 #endif

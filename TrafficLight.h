@@ -1,21 +1,29 @@
 #ifndef TRAFFIC_LIGHT_H
 #define TRAFFIC_LIGHT_H
+
 #include <iostream>
+#include <ctime>
 
 #include "UserInputCheck.h"
-#include <ctime>
-#include <thread>
 
 class TrafficLight
 {
 
+public:
+
+	void startSimulation() const;
+
+	static void drawLight(const std::string []);
+	void blinkYellow() const;
+	void checkUserInput() const;
+
+private:
+
 	UserInputCheck userInput;
 
-
-	static const int lightWidth = 21;
 	static const int lightHeight = 21;
-
-	const char light[lightHeight][lightWidth] = {
+	
+	std::string const blank[lightHeight] = {
 		"********************",
 		"*                  *",
 		"*        *         *",
@@ -38,7 +46,7 @@ class TrafficLight
 		"*                  *",
 		"********************"
 	};
-	const char lightRed[lightHeight][lightWidth] = {
+	std::string const red[lightHeight] = {
 		"********************",
 		"*                  *",
 		"*        *         *",
@@ -61,7 +69,7 @@ class TrafficLight
 		"*                  *",
 		"********************"
 	};
-	const char lightYellow[lightHeight][lightWidth] = {
+	std::string const yellow[lightHeight] = {
 		"********************",
 		"*                  *",
 		"*        *         *",
@@ -84,7 +92,7 @@ class TrafficLight
 		"*                  *",
 		"********************"
 	};
-	const char lightGreen[lightHeight][lightWidth] = {
+	std::string const green[lightHeight] = {
 		"********************",
 		"*                  *",
 		"*        *         *",
@@ -107,21 +115,7 @@ class TrafficLight
 		"*                  *",
 		"********************"
 	};
-	//bool stopLight;
 
-
-public:
-
-	TrafficLight();
-	
-	void drawEmpty() const;
-	void drawRed() const;
-	void blinkYellow() const;
-	void drawYellow() const;
-	void drawGreen() const;
-
-	void turnOnLight();
-	void checkState() const;
 };
 
 #endif

@@ -1,14 +1,10 @@
 #include "UserInputCheck.h"
 static bool stopLight;
 
-
-
 UserInputCheck::UserInputCheck()
 {
-	
 	stringSize = 0;
 }
-
 
 UserInputCheck::~UserInputCheck()
 {
@@ -38,12 +34,8 @@ void UserInputCheck::waitUserResponce()
 	}
 }
 
-std::string UserInputCheck::getUserInput() const
-{
-	return userInput;
-}
 
-bool UserInputCheck::getState()
+bool UserInputCheck::isChangingState()
 {
 	return stopLight;
 }

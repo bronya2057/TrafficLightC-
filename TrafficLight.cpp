@@ -1,26 +1,13 @@
 #include "TrafficLight.h"
 
-void TrafficLight::drawEmpty() const
+
+void TrafficLight::drawLight(const std::string someLight[])
 {
 	for (int i = 0; i < lightHeight; i++)
 	{
-		for (int j = 0; j < lightWidth; j++)
-			std::cout << light[i][j];
+		std::cout << someLight[i];
 		std::cout << "\n";
 	}
-}
-
-void TrafficLight::drawRed() const
-{
-	_sleep(1000);
-	system("cls");
-	for (int i = 0; i < lightHeight; i++)
-	{
-		for (int j = 0; j < lightWidth; j++)
-			std::cout << lightRed[i][j];
-		std::cout << "\n";
-	}
-
 }
 
 void TrafficLight::blinkYellow() const
@@ -30,7 +17,7 @@ void TrafficLight::blinkYellow() const
 	for (int yellowBlink = 0; yellowBlink<4; yellowBlink++)
 	{
 		_sleep(1000);
-		checkState();
+		checkUserInput();
 		system("cls");
 		currentTime = std::clock() - lightActivationTime;
 
@@ -38,76 +25,54 @@ void TrafficLight::blinkYellow() const
 
 		if (isEvenTime == 0)
 		{
-			
-			drawEmpty();
-
+			drawLight(blank);
 		}
 		else
 		{
-			drawYellow();
+			drawLight(yellow);
 		}
 	}
-	
 }
 
-void TrafficLight::drawYellow() const
-{
-	for (int i = 0; i < lightHeight; i++)
-	{
-		for (int j = 0; j < lightWidth; j++)
-			std::cout << lightYellow[i][j];
-		std::cout << "\n";
-	}
-}
-
-void TrafficLight::drawGreen() const
-{
-	_sleep(1000);
-	system("cls");
-	for (int i = 0; i < lightHeight; i++)
-	{
-		for (int j = 0; j < lightWidth; j++)
-			std::cout << lightGreen[i][j];
-		std::cout << "\n";
-	}
-}
-
-void TrafficLight::turnOnLight()
+void TrafficLight::startSimulation() const
 {
 	bool isGoingDown = true;
 
 	while (true)
 	{
-
 		if (isGoingDown)
 		{
-			drawRed();
 			_sleep(1000);
-			checkState();
+			system("cls");
+			drawLight(red);
+			_sleep(1000);
+			checkUserInput();
 			blinkYellow();
-			checkState();
-			drawGreen();
+			checkUserInput();
+			_sleep(1000);
+			system("cls");
+			drawLight(green);
 			_sleep(2000);
 			isGoingDown = false;
 		}
 		else
 		{
-			checkState();
+			checkUserInput();
 			blinkYellow();
 			isGoingDown = true;
 		}
 	}
 }
 
-void TrafficLight::checkState() const
+void TrafficLight::checkUserInput() const
 {
-	if (userInput.getState())
+	if (userInput.isChangingState())
 	{
 		do
 		{
 			_sleep(1000);
 			std::cout << "PAUSE";
-		} while (userInput.getState());
+		} while (userInput.isChangingState());
 	}
 }
 

@@ -72,7 +72,6 @@ artifacts/
 *.1.tlog
 *.tlog
 *.VC.VC.opendb
-LuxoftC++Light.VC.VC.opendb
 *.VC.opendb
 
 # Chutzpah Test files

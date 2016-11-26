@@ -7,7 +7,7 @@ class TrafficLight
 {
 	enum state { RED,YELLOW,GREEN };
 	int timeElapsedPause;			//TO SOLVE PROBLEM WITH TIME after PAUSE
-	bool isGoingDown;
+	
 
 	static const int lightWidth = 21;
 	static const int lightHeight = 21;
@@ -113,7 +113,10 @@ public:
 	void blinkYellow();
 	void drawYellow() const;
 	void drawGreen() const;
-	
+
+	void pauseSimulation();
+
+
 
 };
 

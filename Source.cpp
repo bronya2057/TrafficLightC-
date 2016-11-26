@@ -1,7 +1,12 @@
 #include "Source.h" //TODO THREAD stop start from other thread and fix time left to execute
 
+
+
 int main()
 {
+	
+	
+	
 	std::cout << "WELCOME TO TRAFFIC LIGHT";
 	_sleep(1000);
 	std::thread lightControlThread(turnOnLight);     // spawn new thread that calls 
@@ -14,6 +19,12 @@ int main()
 	return 0;
 }
 
+void pause_thread(int n)
+{
+	std::this_thread::sleep_for(std::chrono::seconds(n));
+	std::cout << "pause of " << n << " seconds ended\n";
+}
+
 void turnOnLight()
 {
 
@@ -24,7 +35,6 @@ void turnOnLight()
 	{
 		if (isGoingDown)
 		{
-
 			light.drawRed();
 			_sleep(1000);
 			light.blinkYellow();
@@ -34,9 +44,19 @@ void turnOnLight()
 		}
 		else
 		{
+			//std::chrono::microseconds us = 5000;
+			//auto start = std::chrono::high_resolution_clock::now() +5 ;
+			//auto end = start + 5000;
+			//do
+			//{
+			//	std::this_thread::yield();
+			//} while (std::chrono::high_resolution_clock::now() < end);
+			
+			
 			light.blinkYellow();
 			isGoingDown = true;
 		}
+		
 	}
 }
 void waitUserResponce()
@@ -47,15 +67,16 @@ void waitUserResponce()
 		/*_sleep(1000);
 		std::cout << "FUCK";*/
 		//std::cout << std::cin.get();
+		
 		std::string userInput;
 		std::getline(std::cin, userInput);
 		const int stringSize = userInput.length();
 		std::cout << "The total number of characters entered is: " << stringSize << std::endl;
-		if(stringSize>1)
+		if (stringSize > 1)
 		{
 			std::cout << "FUUUUCLK";
 		}
-		else if (userInput == "1")
+		else if (userInput == "E")
 			exit(0);
 		
 	}

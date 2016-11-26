@@ -1,10 +1,16 @@
 #ifndef TRAFFIC_LIGHT_H
 #define TRAFFIC_LIGHT_H
 #include <iostream>
+
+#include "UserInputCheck.h"
 #include <ctime>
+#include <thread>
 
 class TrafficLight
 {
+
+	UserInputCheck userInput;
+
 
 	static const int lightWidth = 21;
 	static const int lightHeight = 21;
@@ -101,16 +107,21 @@ class TrafficLight
 		"*                  *",
 		"********************"
 	};
+	//bool stopLight;
 
 
-	
 public:
+
+	TrafficLight();
+	
 	void drawEmpty() const;
 	void drawRed() const;
-	void blinkYellow();
+	void blinkYellow() const;
 	void drawYellow() const;
 	void drawGreen() const;
 
+	void turnOnLight();
+	void checkState() const;
 };
 
 #endif

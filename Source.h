@@ -1,11 +1,6 @@
 #ifndef SOURCE_CLASS
 #define SOURCE_CLASS
 
-void turnOnLight();
-void waitUserResponce();
-void checkState();
-
-
 #include <string>
 #include<cstdio>
 

@@ -2,9 +2,6 @@
 
 int main()
 {
-	
-	
-	system("stty raw");
 	std::cout << "WELCOME TO TRAFFIC LIGHT";
 	_sleep(1000);
 	std::thread lightControlThread(turnOnLight);     // spawn new thread that calls 
@@ -14,7 +11,6 @@ int main()
 
 	lightControlThread.join();                // pauses until first finishes
 	userInputThread.join();               // pauses until second finishes
-	
 	return 0;
 }
 
@@ -50,7 +46,16 @@ void waitUserResponce()
 	{
 		/*_sleep(1000);
 		std::cout << "FUCK";*/
-		if (std::cin.get() == '1')
+		//std::cout << std::cin.get();
+		std::string userInput;
+		std::getline(std::cin, userInput);
+		const int stringSize = userInput.length();
+		std::cout << "The total number of characters entered is: " << stringSize << std::endl;
+		if(stringSize>1)
+		{
+			std::cout << "FUUUUCLK";
+		}
+		else if (userInput == "1")
 			exit(0);
 		
 	}
